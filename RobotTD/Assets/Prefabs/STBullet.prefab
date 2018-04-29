@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23830544226748198}
   - component: {fileID: 95128351599580660}
   - component: {fileID: 114128218159772230}
+  - component: {fileID: 65353105681675194}
   m_Layer: 0
   m_Name: STBullet
   m_TagString: Untagged
@@ -84,6 +85,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1677382482644146}
   m_Mesh: {fileID: 4300000, guid: 21bf3a015b7e99f41b94cbde43aa1c74, type: 3}
+--- !u!65 &65353105681675194
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1677382482644146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.020000005, z: 0.08046744}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95128351599580660
 Animator:
   serializedVersion: 3

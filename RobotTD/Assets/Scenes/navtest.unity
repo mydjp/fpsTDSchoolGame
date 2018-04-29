@@ -744,7 +744,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 508306411}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3.9394367
+  m_Radius: 3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -809,7 +809,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15757746, y: 0.069758296, z: 0.064651184}
+  m_Size: {x: 3.2325592, y: 3.487915, z: 7.8788733}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &508306418
 MeshFilter:
@@ -844,8 +844,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 20
-  SpawnPoint: {fileID: 0}
-  points: 0
 --- !u!1001 &566808640
 Prefab:
   m_ObjectHideFlags: 0

@@ -50,7 +50,7 @@ public class NavWolfAi : MonoBehaviour {
 		}
 		//Attacking
 		else if(distance <=  alertDist){
-			print("Wolf is following!");
+			
 			direction = player.position - transform.position;
 			direction.y = 0;
 
