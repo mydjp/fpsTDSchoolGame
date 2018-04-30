@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour
 		{
 			other.gameObject.GetComponent<wolfHealth>().TakeDamage(damage);
 			Destroy(gameObject);
+			Debug.Log("Pew Pew");
 		}
 	}
 
