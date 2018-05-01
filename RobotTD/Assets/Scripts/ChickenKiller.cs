@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NavWolfAi : MonoBehaviour {
+public class ChickenKiller : MonoBehaviour {
 
 	// Public 
-	public Transform player;
+	public Transform chicken;
 	public float speed;
 
 	public int damage;
@@ -30,12 +30,12 @@ public class NavWolfAi : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		state = GetComponent<Animator>();
-		distance = Vector3.Distance(player.position, transform.position);
+		distance = Vector3.Distance(chicken.position, transform.position);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		distance = Vector3.Distance(player.position, transform.position);
+		distance = Vector3.Distance(chicken.position, transform.position);
 		
 		// Alert
 		if(distance < alertDist && distance > attackDist){
@@ -44,14 +44,14 @@ public class NavWolfAi : MonoBehaviour {
 			state.SetBool("isWandering",false);
 			state.SetBool("isAttacking",false);
 			speed = 13;
-			transform.LookAt(player);
+			transform.LookAt(chicken);
 			transform.Translate(Vector3.forward*speed*Time.deltaTime);
 
 		}
 		//Attacking
 		else if(distance <=  alertDist){
 			
-			direction = player.position - transform.position;
+			direction = chicken.position - transform.position;
 			direction.y = 0;
 
 			
@@ -61,7 +61,7 @@ public class NavWolfAi : MonoBehaviour {
 
 			speed = 3;
 			
-			transform.LookAt(player);
+			transform.LookAt(chicken);
 			transform.Translate(Vector3.forward*speed*Time.deltaTime);
 
 			if(direction.magnitude <= attackDist){
@@ -107,7 +107,7 @@ public class NavWolfAi : MonoBehaviour {
 	private void OnTriggerEnter(Collider other)
 	
 	{
-		if (other.gameObject.tag == "Player")
+		if (other.gameObject.tag == "Chicken")
 		{
 				other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
 		}

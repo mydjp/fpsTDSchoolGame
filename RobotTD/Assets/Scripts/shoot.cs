@@ -48,7 +48,7 @@ public class shoot : MonoBehaviour {
 //checking cooldown
 	void Attack()
 	{
-		Debug.Log("Pew Pew");
+		
 	}
 		
 		

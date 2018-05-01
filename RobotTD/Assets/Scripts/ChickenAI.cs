@@ -41,12 +41,13 @@ public class ChickenAI : MonoBehaviour {
 		// Alert
 		if(distance < alertDist && distance > attackDist)
         {
-			print("Chicke sees player");
+			
 			state.SetBool("Run Away",true);
 			state.SetBool("Wander",false);
 			
 			speed = 13;
-			transform.LookAt(wolf);
+			//transform.LookAt(wolf);
+			transform.LookAt(2 * transform.position - wolf.position);
             //2 * transform.position- lookingAt.position
 			transform.Translate(Vector3.forward*speed*Time.deltaTime);
 

@@ -18,23 +18,26 @@ public class Turret : MonoBehaviour
 
 	public GameObject STbulletPrefab;
 	public Transform firePoint;
+
+	public float shortestDistance;
+	
 	
 
 	// Use this for initialization
 	void Start()
 	{
-		InvokeRepeating("UpdateTarget", 0f, 0.5f);
+		InvokeRepeating("UpdateTarget", 0f, 0.1f);
 	}
 
 	void UpdateTarget ()
 	{
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-		float shortestDistance = Mathf.Infinity;
+		shortestDistance = Mathf.Infinity;
 		GameObject nearestEnemy = null;
 
 		foreach (GameObject enemy in enemies)
 		{
-			float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+			float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 			if (distanceToEnemy < shortestDistance)
 			{
 				shortestDistance = distanceToEnemy;
@@ -55,6 +58,8 @@ public class Turret : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
+		//UpdateTarget();
+
 		if (target == null)
 			return;
 // target lock on

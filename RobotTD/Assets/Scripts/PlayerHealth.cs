@@ -16,8 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
 	 void Start()
 	{
-		currentHealth = maxHealth;
-		SetHealthBar();
+	
 		
 
 	}
@@ -25,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
 	public void TakeDamage(float amount)
 	{
 		currentHealth -= amount;
-		SetHealthBar();
+		
 		if (currentHealth <= 0)
 		{
 			currentHealth = 0;
@@ -33,12 +32,7 @@ public class PlayerHealth : MonoBehaviour
 		}
 	}
 
-	public void SetHealthBar()
-	{
-		float my_health = currentHealth / maxHealth;
-		healthBar.transform.localScale = new Vector3(Mathf.Clamp(my_health, 0f, 1f),healthBar.transform.localScale.y, healthBar.transform.localScale.z);
 	
-	}
 	
 	
 }
