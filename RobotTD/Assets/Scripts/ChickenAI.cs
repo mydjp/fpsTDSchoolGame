@@ -23,6 +23,8 @@ public class ChickenAI : MonoBehaviour {
 	private float timer;
 	private float distance;
 
+	public Transform chickenPen;
+
 	void OnEnable () {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent> ();
         timer = wanderTimer;
@@ -89,4 +91,17 @@ public class ChickenAI : MonoBehaviour {
  
         return navHit.position;
     }
+
+	void OnCollisionEnter(Collision other)
+	{
+		if(other.gameObject.tag == "Player")
+		{
+		
+			//Send chicken to chicken pen.
+			transform.position = chickenPen.position;
+			transform.rotation = chickenPen.rotation;
+			print ("go to the pen");
+
+		}
+	}
 }

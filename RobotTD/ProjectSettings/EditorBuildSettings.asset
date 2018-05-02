@@ -9,5 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/main_menu.unity
     guid: 8499647b826c2d240bbb8009c993706d
   - enabled: 1
-    path: Assets/Scenes/Test_Grounds.unity
-    guid: b606843e289e72645affec112adda4b4
+    path: Assets/Scenes/navtest.unity
+    guid: 5464c3f60da623041add3dba623be500
